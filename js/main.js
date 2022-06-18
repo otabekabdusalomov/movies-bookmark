@@ -10,10 +10,6 @@ elResult.textContent = films.length;
 
 const markedFilms = [];
 
-//  todo: place all genres into  select elements
-
-// const nimad = films.map(film => film.genres).
-
 const renderGenres = (arr) => {
   const allGenres = [];
 
@@ -37,7 +33,6 @@ const renderGenres = (arr) => {
 
 renderGenres(films);
 
-// todo: place all films into movies list
 const renderMovies = function (filmsArr, htmlElement) {
   filmsArr.forEach((movie) => {
     movie.isMark = false;
@@ -97,8 +92,6 @@ const renderMovies = function (filmsArr, htmlElement) {
 };
 
 renderMovies(films, elMovieList);
-
-// todo: add addEventListener for filter films
 
 elMovieForm.addEventListener("submit", function (ent) {
   ent.preventDefault();
