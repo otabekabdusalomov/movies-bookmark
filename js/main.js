@@ -116,8 +116,8 @@ const renderMark = (marked, element) => {
     const newMarkName = document.createElement("p");
     const newRemoveBtn = document.createElement("button");
 
-    newRemoveBtn.setAttribute("class", "btn btn-warning");
-    newMarkName.setAttribute("class", "fs-1 fw-bold");
+    newRemoveBtn.setAttribute("class", "btn");
+    newMarkName.setAttribute("class", "fs-1");
 
     newMarkName.textContent = movie.title;
     newRemoveBtn.textContent = "Look throught";
