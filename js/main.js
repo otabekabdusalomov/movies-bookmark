@@ -36,7 +36,7 @@ renderGenres(films);
 const renderMovies = function (filmsArr, htmlElement) {
   filmsArr.forEach((movie) => {
     movie.isMark = false;
-    //CREATE ELEMENT
+
     const newLi = document.createElement("li");
     const newImg = document.createElement("img");
     const newDiv = document.createElement("div");
@@ -46,7 +46,7 @@ const renderMovies = function (filmsArr, htmlElement) {
     const newButton = document.createElement("a");
     const newMarkBtn = document.createElement("button");
 
-    //SET ATTTIBUTE
+
     newLi.setAttribute("class", "card mb-3");
     newLi.style.width = "18rem";
     newImg.classList.add("card-img-top");
@@ -70,15 +70,12 @@ const renderMovies = function (filmsArr, htmlElement) {
 
     const genresList = document.createElement("ul");
 
-    movie.genres.forEach((genre) => {
+    movie.genres.forEach((evt) => {
       const newGenre = document.createElement("li");
-
-      newGenre.textContent = genre;
-
+      newGenre.textContent = evt;
       genresList.appendChild(newGenre);
     });
 
-    //APPEND
     htmlElement.appendChild(newLi);
     newLi.appendChild(newImg);
     newLi.appendChild(newDiv);
@@ -113,8 +110,6 @@ elMovieForm.addEventListener("submit", function (ent) {
   renderMovies(filteredFilms, elMovieList);
 });
 
-// !  --------------
-
 const renderMark = (marked, element) => {
   marked.forEach((movie) => {
     const newMarkLi = document.createElement("li");
@@ -125,7 +120,7 @@ const renderMark = (marked, element) => {
     newMarkName.setAttribute("class", "fs-1 fw-bold");
 
     newMarkName.textContent = movie.title;
-    newRemoveBtn.textContent = "Remove";
+    newRemoveBtn.textContent = "Look throught";
     newRemoveBtn.dataset.removeBtnId = movie.id;
 
     if (movie.isMark) {
@@ -139,7 +134,6 @@ const renderMark = (marked, element) => {
 
 renderMark(films, elMarkList);
 
-// todo:
 elMovieList.addEventListener("click", (ent) => {
   elMarkList.innerHTML = null;
 
@@ -154,7 +148,6 @@ elMovieList.addEventListener("click", (ent) => {
   renderMark(films, elMarkList);
 });
 
-// todo:
 elMarkList.addEventListener("click", (ent) => {
   elMarkList.innerHTML = null;
 
